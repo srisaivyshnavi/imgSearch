@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SearchImageComponent } from './search-image/search-image.component';
+import { SavedImagesComponent } from './saved-images/saved-images.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'home', component:SearchImageComponent},
+  {path:'favImages',component:SavedImagesComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
