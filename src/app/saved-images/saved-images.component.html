@@ -1,6 +1,11 @@
+<div class="btn btn-primary">
+    <button  routerLink ="/home" mat-button  mat-dialog-close class="btn btn-primary searchButton" type="button">Back to home</button>
+</div>
 <div class="container">
-    <div *ngFor = "let displayImage of favImage" style="display: inline-block">
-        <img src='{{displayImage.userImageURL}}' style="height:200px; width:200px;"/>
-
+    
+    <div class="imgmargin" *ngFor = "let displayImage of favImage; let i=index;" style="display: inline-block">
+        
+        <img src='{{displayImage.urls.small}}' style="height:200px; width:200px;" />
+    
     </div>
 </div>

@@ -14,9 +14,15 @@ export class AddFavouriteComponent implements OnInit {
   data:any;
   link:String;
   favImages : any;
+  pageUrl: any;
+  imageName: any;
   constructor(private service :SearchServiceService,public snackBar: MatSnackBar,private dialogRef: MatDialogRef<AddFavouriteComponent>,@Inject(MAT_DIALOG_DATA) data) { 
     this.data = data;
     //this.link = data.pageURL
+  this.pageUrl = data.user.name
+  this.imageName = data.alt_description;
+
+
     console.log(data);
   }
  
@@ -26,6 +32,7 @@ export class AddFavouriteComponent implements OnInit {
     this.service.sendData(this.data)
     
   }
+  
   
  
 }

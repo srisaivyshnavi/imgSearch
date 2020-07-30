@@ -1,16 +1,17 @@
 
-    <div class="container">
+    <div class="container margin">
         <h2>Search Image</h2>
         <form >
           <input type="search"  (keyup)="search($event.target.value)">
-          <div>
-            <button  routerLink ="/favImages" mat-button  mat-dialog-close class="btn btn-primary searchButton" type="button">Go to Favorities</button>
-        </div>
+          
         </form>
+        <div class="btn btn-primary" >
+         <button  routerLink ="/favImages" mat-button  mat-dialog-close class="btn btn-primary searchButton" type="button">Go to Favorities</button>
+      </div>
 
         <div class="row">
         <div class ="col-md-2 box" *ngFor = "let image of response; let i=index;">
-        <img src='{{image.userImageURL}}' style="height:200px; width:200px;"  (click)="openDialog(i)"/>
+        <img src='{{image.urls.small}}' style="height:200px; width:200px;"  (mouseover)="openDialog(i)" download/>
         </div>
         </div>
         </div>

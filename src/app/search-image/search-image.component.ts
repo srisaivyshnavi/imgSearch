@@ -12,6 +12,7 @@ export class SearchImageComponent implements OnInit {
   response: any;
   favImage = [];
   image:any;
+  
   constructor(private service :SearchServiceService, private dialog: MatDialog) { 
    
   }
@@ -29,7 +30,7 @@ export class SearchImageComponent implements OnInit {
   search(query){
   this.service.getSearchResult(query).subscribe(result =>{
   console.log(result);
-  this.response = result["hits"]
+  this.response = result["results"]
  
   })  
   }
