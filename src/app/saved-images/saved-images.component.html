@@ -5,7 +5,7 @@
     
     <div class="imgmargin" *ngFor = "let displayImage of favImage; let i=index;" style="display: inline-block">
         
-        <img src='{{displayImage.urls.small}}' style="height:200px; width:200px;" />
+        <img src='{{displayImage.urls.small}}' style="height:200px; width:200px;" (click)="downloadFav(i);"/>
     
     </div>
 </div>

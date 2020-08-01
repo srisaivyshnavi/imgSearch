@@ -12,15 +12,19 @@ export class SearchImageComponent implements OnInit {
   response: any;
   favImage = [];
   image:any;
-  
+  display: boolean = false;
+  isDisable: boolean = true;
+   
   constructor(private service :SearchServiceService, private dialog: MatDialog) { 
    
   }
-  openDialog(i):void {
+  addSelected(i):void {
+    this.isDisable = false;
     const dialogRef=this.dialog.open(AddFavouriteComponent , {   
         width:'500px',
         height:'200px',
         data:this.response[i]
+        
     });
     dialogRef.afterClosed().subscribe(result=> {
       console.log(result)

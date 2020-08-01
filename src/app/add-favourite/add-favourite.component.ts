@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 
+
 @Component({
   selector: 'app-add-favourite',
   templateUrl: './add-favourite.component.html',
@@ -16,6 +17,11 @@ export class AddFavouriteComponent implements OnInit {
   favImages : any;
   pageUrl: any;
   imageName: any;
+  val1: any;
+  display: boolean;
+  list1: any;
+  listValues: any = [];
+  list2: any;
   constructor(private service :SearchServiceService,public snackBar: MatSnackBar,private dialogRef: MatDialogRef<AddFavouriteComponent>,@Inject(MAT_DIALOG_DATA) data) { 
     this.data = data;
     //this.link = data.pageURL
@@ -33,6 +39,9 @@ export class AddFavouriteComponent implements OnInit {
     
   }
   
+  onRadioBtnClick(list) {
+    this.val1 = list;
+  }
   
  
 }

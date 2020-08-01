@@ -1,6 +1,18 @@
-Author:{{pageUrl}}
+<button type="button" mat-dialog-close class="pull-right">&times;</button>
+<div style=" margin-bottom:2px;" >
+    <button (click)="addSelected()" mat-button  mat-dialog-close class="searchButton" type="button">Add to Favorities</button>
+    </div>
+    <!-- <div style="width:250px;margin-bottom:10px">
+        <div><input type="radio"  name="group1" value="val1" label="List 1" (onClick)="onRadioBtnClick('List1')">Container 1</div>
+        <div><input type="radio" name="group1" value="val1" label="List 2" (onClick)="onRadioBtnClick('List2')">Container  2</div>
+    </div> -->
+    
+<div  style="background-color:rgb(179, 176, 176);">
+    <b>Author:</b>{{pageUrl}}
 <br/>
-description:{{imageName}}
-<div>
-<button (click)="addSelected()" mat-button  mat-dialog-close class="searchButton" type="button">Add to Favorities</button>
+<b>description</b>:{{imageName}}
+<br/>
 </div>
+
+
+

@@ -5,7 +5,8 @@ import { SavedImagesComponent } from './saved-images/saved-images.component';
 
 const routes: Routes = [
   {path:'home', component:SearchImageComponent},
-  {path:'favImages',component:SavedImagesComponent}
+  {path:'favImages',component:SavedImagesComponent},
+  {path: "",redirectTo: '/home',pathMatch: 'full'}
 ];
 
 @NgModule({
