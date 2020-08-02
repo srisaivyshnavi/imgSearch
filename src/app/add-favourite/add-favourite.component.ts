@@ -11,7 +11,8 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./add-favourite.component.css']
 })
 export class AddFavouriteComponent implements OnInit {
-
+  listName : any = "";
+  list:string = "";
   data:any;
   link:String;
   favImages : any;
@@ -22,6 +23,11 @@ export class AddFavouriteComponent implements OnInit {
   list1: any;
   listValues: any = [];
   list2: any;
+  lists = [];
+  object: { name: any; imageUrl: any; };
+  showInput: boolean;
+  favList: boolean;
+  favLists: any[];
   constructor(private service :SearchServiceService,public snackBar: MatSnackBar,private dialogRef: MatDialogRef<AddFavouriteComponent>,@Inject(MAT_DIALOG_DATA) data) { 
     this.data = data;
     //this.link = data.pageURL
@@ -33,6 +39,12 @@ export class AddFavouriteComponent implements OnInit {
   }
  
   ngOnInit(): void {
+    this.lists = this.service.receiveData();
+    if(this.lists.length != 0){
+    this.favList = true;
+    this.favLists = [...new Set(this.lists.map(x=>x.name))]
+    }
+    console.log(this.lists);
   }
   addSelected(){
     this.service.sendData(this.data)
@@ -42,6 +54,22 @@ export class AddFavouriteComponent implements OnInit {
   onRadioBtnClick(list) {
     this.val1 = list;
   }
-  
+  addToFavourities(listName){
+    // if(listName === undefined){
+        // alert("Input field cannot be empty")
+    // }else{
+      console.log(this.list)
+      this.object = {"name":this.listName,"imageUrl":this.data.urls.small}
+      this.service.sendData(this.object);
+    // }
+  }
+  addToExisting(listName){
+    console.log(listName)
+    this.object = {"name":listName,"imageUrl":this.data.urls.small}
+    this.service.sendData(this.object);
+  }
+  addNewList(){
+    this.showInput = true
+  }  
  
 }

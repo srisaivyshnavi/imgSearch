@@ -9,6 +9,7 @@ import { AddFavouriteComponent } from './add-favourite/add-favourite.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material/material.module';
 import { SavedImagesComponent } from './saved-images/saved-images.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SavedImagesComponent } from './saved-images/saved-images.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
     
   ],
   providers: [],

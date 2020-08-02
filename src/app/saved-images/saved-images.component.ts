@@ -12,7 +12,9 @@ export class SavedImagesComponent implements OnInit {
 
   ngOnInit(): void {
      this.favImage = this.service.receiveData()
-    
+     this.favImage = [...new Set(this.favImage)]
+     
+     
   }
   // downloadFav(i) {
   //   const imgUrl = i.links.download;
@@ -23,7 +25,7 @@ export class SavedImagesComponent implements OnInit {
   
   // }
   downloadFav(i){
-    this.toDataURL(this.favImage[i].urls.small, function (dataUrl) {
+    this.toDataURL(this.favImage[i].imageUrl, function (dataUrl) {
     console.log(dataUrl)
     var a = document.createElement("a"); //Create <a>
     a.href = dataUrl; //Image Base64 Goes here
